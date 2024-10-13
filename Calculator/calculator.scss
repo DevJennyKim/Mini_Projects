@@ -1,29 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Protest+Strike&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 body {
-  background-color: #1f1f1f;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
+.title {
+  color: #949494;
+}
+.description {
+  color: #b3b3b3;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
 .calc {
+  display: flex;
+  justify-content: space-between;
   width: 500px;
   background-color: #ccc;
-  border: 1px solid #333;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
   padding: 5px;
   width: auto;
   height: auto;
+  gap: 10px;
   &__container {
     display: grid;
     grid-template-columns: repeat(4, 65px);
     grid-auto-rows: 65px;
-    grid-gap: 5px;
+    grid-gap: 0;
     input {
-      border: 3px solid black;
+      outline: none;
+      border: 0.5px solid rgb(184, 184, 184);
       cursor: pointer;
       font-size: larger;
       &[type='text'] {
@@ -33,9 +50,13 @@ body {
   }
 }
 
+.output {
+  padding-left: 10px;
+}
+
 .clear {
   background-color: #ed4848;
-  grid-column: span 3;
+  grid-column: span 2;
   &:hover {
     background-color: #c03c3c;
   }
@@ -46,23 +67,46 @@ body {
     background-color: rgb(202, 131, 0);
   }
 }
-.result {
-  grid-column: span 2;
-}
-.num {
+
+.num,
+.backspace {
   &:hover {
     background-color: lightgray;
   }
 }
 .dot {
   background-color: rgb(78, 165, 78);
+
   &:hover {
     background-color: rgb(71, 136, 71);
   }
 }
 .result {
   background-color: orange;
+  grid-column: span 2;
   &:hover {
     background-color: rgb(202, 131, 0);
   }
+}
+.line {
+  width: 3px;
+  height: 390px;
+  background-color: rgb(189, 189, 189);
+}
+.history {
+  width: 200px;
+  max-height: 370px;
+  overflow-y: auto;
+  padding: 3px;
+  &__title {
+    color: #616161;
+  }
+}
+.history__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.history div {
+  margin: 5px 0;
 }
