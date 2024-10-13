@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Protest+Strike&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #fff4ea;
+  font-family: 'Noto Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+  height: 650px;
+  gap: 3rem;
+  background-color: #fadfa1;
+  border-radius: 40px;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  color: #ca6969;
+  margin-top: 30px;
+}
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: auto;
+  margin-bottom: 20px;
+  gap: 1rem;
+}
+.voice {
+  width: 100px;
+}
+.text-control {
+  background-color: #fadfa1;
+  border-radius: 15px;
+  border: 3px solid #fff4ea;
+  outline: none;
+  padding: 20px;
+  resize: none;
+  color: gray;
+  &::placeholder {
+    color: gray;
+  }
+}
+
+.error-para {
+  height: 5px;
+  color: gray;
+  margin: 20px 0;
+}
+
+.btn {
+  border: none;
+  background-color: #94d5e2;
+  color: white;
+  width: 200px;
+  height: 50px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  &:hover {
+    background-color: #3a7b88;
+  }
+}

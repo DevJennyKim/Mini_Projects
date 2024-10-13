@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text to Speech Converter</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="wrapper">
+        <div class="header">
+          <h1>Text to Speech Converter</h1>
+          <h3>Enter Text and Convert in to Speech</h3>
+        </div>
+        <div class="input_container">
+          <label for="voice">Choose the voice!</label>
+          <select name="voice" id="voice" class="voice">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <textarea
+            name="input"
+            id="textToConvert"
+            placeholder="Enter text to convert in to speech..."
+            cols="35"
+            rows="10"
+            class="text-control"
+          ></textarea>
+          <p class="error-para"></p>
+          <button type="button" class="btn" id="convertBtn">
+            Play Converted Sound
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="TextToSpeech.js" defer></script>
+  </body>
+</html>
