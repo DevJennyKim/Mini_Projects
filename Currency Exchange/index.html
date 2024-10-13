@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="outbox">
+        <img src="exchnageicon.png" alt="exchange">
+        
+        <div class="header">
+            <h1>Exchange Rate Calculator</h1>
+            <h4>Choose the currency and the amounts to get the exchange rate</h4><br>
+        </div>
+
+        <div class="exchange-box">
+            <div class="dropdown">
+                <button class="dropbtn" id="from-button">USD</button>
+                <div class="dropdown-content" id="currency-one">
+                    <a href="#" value="AED">AED</a>
+                    <a href="#" value="ARS">KRW</a>
+                    <a href="#" value="AUD">AUD</a>
+                    <a href="#" value="BGN">BGN</a>
+                    <a href="#" value="BRL">BRL</a>
+                    <a href="#" value="BSD">BSD</a>
+                    <a href="#" value="CAD">CAD</a>
+                    <a href="#" value="CLP">CLP</a>
+                    <a href="#" value="CNY">CNY</a>
+                    <a href="#" value="COP">COP</a>
+                    <a href="#" value="CZK">CZK</a>
+                    <a href="#" value="DKK">DKK</a>
+                    <a href="#" value="DOP">DOP</a>
+                    <a href="#" value="EGP">EGP</a>
+                    <a href="#" value="EUR">EUR</a>
+                    <a href="#" value="FJD">FJD</a>
+                    <a href="#" value="GBP">GBP</a>
+                    <a href="#" value="GTQ">GTQ</a>
+                    <a href="#" value="HKD">HKD</a>
+                    <a href="#" value="HRK">HRK</a>
+                    <a href="#" value="HUF">HUF</a>
+                    <a href="#" value="IDR">IDR</a>
+                    <a href="#" value="ILS">ILS</a>
+                    <a href="#" value="INR">INR</a>
+                    <a href="#" value="ISK">ISK</a>
+                    <a href="#" value="JPY">JPY</a>
+                    <a href="#" value="KRW">KRW</a>
+                    <a href="#" value="KZT">KZT</a>
+                    <a href="#" value="MXN">MXN</a>
+                    <a href="#" value="MYR">MYR</a>
+                    <a href="#" value="NOK">NOK</a>
+                    <a href="#" value="NZD">NZD</a>
+                    <a href="#" value="PAB">PAB</a>
+                    <a href="#" value="PEN">PEN</a>
+                    <a href="#" value="PHP">PHP</a>
+                    <a href="#" value="PKR">PKR</a>
+                    <a href="#" value="PLN">PLN</a>
+                    <a href="#" value="PYG">PYG</a>
+                    <a href="#" value="RON">RON</a>
+                    <a href="#" value="RUB">RUB</a>
+                    <a href="#" value="SAR">SAR</a>
+                    <a href="#" value="SEK">SEK</a>
+                    <a href="#" value="SGD">SGD</a>
+                    <a href="#" value="THB">THB</a>
+                    <a href="#" value="TRY">TRY</a>
+                    <a href="#" value="TWD">TWD</a>
+                    <a href="#" value="UAH">UAH</a>
+                    <a href="#" value="USD">USD</a>
+                    <a href="#" value="UYU">UYU</a>
+                    <a href="#" value="VND">VND</a>
+                    <a href="#" value="ZAR">ZAR</a>  
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="number" id="amount-one" value="1">
+            </div>
+        </div>
+
+        <div class="swap-rate-container">
+            <button class="btn-swap" id="swap">
+                SWAP
+            </button>
+            <div class="rate" id="rate"></div>
+        </div>
+
+        <div class="exchange-box">
+            <div class="dropdown">
+                <button class="dropbtn" id="to-button">CAD</button>
+                <div class="dropdown-content" id="currency-two">
+                    <a href="#" value="AED">AED</a>
+                    <a href="#" value="ARS">KRW</a>
+                    <a href="#" value="AUD">AUD</a>
+                    <a href="#" value="BGN">BGN</a>
+                    <a href="#" value="BRL">BRL</a>
+                    <a href="#" value="BSD">BSD</a>
+                    <a href="#" value="CAD">CAD</a>
+                    <a href="#" value="CLP">CLP</a>
+                    <a href="#" value="CNY">CNY</a>
+                    <a href="#" value="COP">COP</a>
+                    <a href="#" value="CZK">CZK</a>
+                    <a href="#" value="DKK">DKK</a>
+                    <a href="#" value="DOP">DOP</a>
+                    <a href="#" value="EGP">EGP</a>
+                    <a href="#" value="EUR">EUR</a>
+                    <a href="#" value="FJD">FJD</a>
+                    <a href="#" value="GBP">GBP</a>
+                    <a href="#" value="GTQ">GTQ</a>
+                    <a href="#" value="HKD">HKD</a>
+                    <a href="#" value="HRK">HRK</a>
+                    <a href="#" value="HUF">HUF</a>
+                    <a href="#" value="IDR">IDR</a>
+                    <a href="#" value="ILS">ILS</a>
+                    <a href="#" value="INR">INR</a>
+                    <a href="#" value="ISK">ISK</a>
+                    <a href="#" value="JPY">JPY</a>
+                    <a href="#" value="KRW">KRW</a>
+                    <a href="#" value="KZT">KZT</a>
+                    <a href="#" value="MXN">MXN</a>
+                    <a href="#" value="MYR">MYR</a>
+                    <a href="#" value="NOK">NOK</a>
+                    <a href="#" value="NZD">NZD</a>
+                    <a href="#" value="PAB">PAB</a>
+                    <a href="#" value="PEN">PEN</a>
+                    <a href="#" value="PHP">PHP</a>
+                    <a href="#" value="PKR">PKR</a>
+                    <a href="#" value="PLN">PLN</a>
+                    <a href="#" value="PYG">PYG</a>
+                    <a href="#" value="RON">RON</a>
+                    <a href="#" value="RUB">RUB</a>
+                    <a href="#" value="SAR">SAR</a>
+                    <a href="#" value="SEK">SEK</a>
+                    <a href="#" value="SGD">SGD</a>
+                    <a href="#" value="THB">THB</a>
+                    <a href="#" value="TRY">TRY</a>
+                    <a href="#" value="TWD">TWD</a>
+                    <a href="#" value="UAH">UAH</a>
+                    <a href="#" value="USD">USD</a>
+                    <a href="#" value="UYU">UYU</a>
+                    <a href="#" value="VND">VND</a>
+                    <a href="#" value="ZAR">ZAR</a>
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="number" id="amount-two">
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
