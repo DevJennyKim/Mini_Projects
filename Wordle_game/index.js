@@ -1,35 +1,7 @@
 const submitBtn = document.querySelector('#submitBtn');
 const wordleDiv = document.querySelector('.wordle_game');
-const apiURL =
-  'https://www.dictionaryapi.com/api/v3/references/sd2/json/school?key=eeadc88f-3228-4551-8165-d3ee0929bcae';
 
 const fiveLetterWords = [
-  'apple',
-  'bread',
-  'candy',
-  'dance',
-  'earth',
-  'flute',
-  'grape',
-  'house',
-  'igloo',
-  'joker',
-  'knife',
-  'lemon',
-  'money',
-  'noble',
-  'ocean',
-  'pearl',
-  'quiet',
-  'river',
-  'sheep',
-  'tiger',
-  'umbra',
-  'vivid',
-  'water',
-  'xenon',
-  'yacht',
-  'zebra',
   'apple',
   'bread',
   'candy',
@@ -108,31 +80,103 @@ const answer =
   fiveLetterWords[Math.floor(Math.random() * fiveLetterWords.length)];
 
 console.log(answer);
-submitBtn.addEventListener('click', () => {
-  /*
-   * 1)check the order = green
-   * 2)if the order is not right = yellow
-   * 3)if nothing right = gray
-   */
-  let input = document.querySelectorAll('.input');
+let win = false;
+let count = 0;
+const maxCount = 6;
+
+let input = document.querySelectorAll('.input');
+function keyEvent() {
+  input.forEach((eachInput, index) => {
+    eachInput.addEventListener('keydown', (event) => {
+      if (event.key !== 'Backspace' && event.key.length === 1) {
+        if (eachInput.value) {
+          if (index < input.length - 1) {
+            eachInput.nextElementSibling.focus();
+          }
+        }
+      }
+
+      if (event.key === 'Enter') {
+        if (index < input.length - 1) {
+          eachInput.nextElementSibling.focus();
+        }
+      }
+
+      if (event.key === 'Backspace') {
+        if (!eachInput.value && eachInput.previousElementSibling) {
+          eachInput.previousElementSibling.focus();
+        }
+      }
+    });
+  });
+}
+
+submitBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  if (win) return;
+
+  let currentValue = '';
+  let enterAll = true;
+
+  for (let i = 0; i < input.length; i++) {
+    currentValue += input[i].value;
+
+    if (!input[i].value) {
+      enterAll = false;
+      alert('Please enter more.');
+      return;
+    }
+  }
+
   for (let i = 0; i < input.length; i++) {
     if (input[i].value == answer[i]) {
-      input[i].style.background = 'green';
+      input[i].style.background = '#71aa61';
+      input[i].style.color = 'white';
+      input[i].style.fontWeight = 'bold';
+      input[i].style.border = `2px solid #71aa61`;
     } else if (answer.includes(input[i].value)) {
-      input[i].style.background = 'yellow';
+      input[i].style.background = '#c6b451';
+      input[i].style.color = 'white';
+      input[i].style.fontWeight = 'bold';
+      input[i].style.border = `2px solid #c6b451`;
     } else {
       input[i].style.background = 'lightgrey';
+
+      input[i].style.color = 'white';
+      input[i].style.fontWeight = 'bold';
+      input[i].style.border = `2px solid lightgrey`;
     }
     input[i].classList.remove('input');
   }
 
-  const newDiv = document.createElement('div');
-  newDiv.classList.add('input_container');
-  wordleDiv.appendChild(newDiv);
+  count++;
+  if (count === maxCount) {
+    alert(`You Lose! The answer is ${answer}!`);
+    return;
+  }
 
-  for (let i = 0; i < 5; i++) {
-    const newInput = document.createElement('input');
-    newInput.classList.add('input');
-    newDiv.appendChild(newInput);
+  if (currentValue === answer) {
+    win = true;
+    alert('Congratulations!! You Win!!');
+    return;
+  } else {
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('input_container');
+
+    for (let i = 0; i < 5; i++) {
+      const newInput = document.createElement('input');
+      newInput.classList.add('input');
+      newInput.setAttribute('maxlength', '1');
+      newDiv.appendChild(newInput);
+    }
+
+    const newHiddenBtn = document.createElement('button');
+    newHiddenBtn.classList.add('hidden');
+    newDiv.appendChild(newHiddenBtn);
+    wordleDiv.appendChild(newDiv);
+    input = document.querySelectorAll('.input');
+    keyEvent();
   }
 });
+
+keyEvent();

@@ -1,19 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Protest+Strike&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Protest+Strike&display=swap");
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
 }
+
 h1 {
   margin: 20px 0 5px 0;
 }
+
 .font-green {
   color: #71aa61;
   font-weight: bold;
 }
+
 .font-yellow {
   color: #c6b451;
   font-weight: bold;
 }
+
 .font-gray {
   color: rgb(173, 173, 173);
   font-weight: bold;
@@ -25,19 +29,19 @@ h1 {
   align-items: center;
   gap: 20px;
 }
+
 .line {
   width: 500px;
   height: 2px;
   background-color: lightgray;
 }
+
 .instruction {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   gap: 1rem;
-  &__title {
-  }
 }
 .example {
   display: flex;
@@ -56,10 +60,12 @@ h1 {
   color: white;
   font-weight: bold;
 }
+
 .green {
   background-color: #71aa61;
   border: 2px solid #71aa61;
 }
+
 .yellow {
   background-color: #c6b451;
   border: 2px solid #c6b451;
@@ -69,6 +75,7 @@ h1 {
   background-color: lightgrey;
   border: 2px solid lightgrey;
 }
+
 .ex__btn {
   display: flex;
   align-items: center;
@@ -90,10 +97,12 @@ h1 {
   align-items: center;
   gap: 1rem;
 }
+
 .input_container {
   display: flex;
   gap: 10px;
 }
+
 input {
   width: 50px;
   height: 50px;
@@ -113,9 +122,9 @@ input {
   border-radius: 5px;
   background-color: #9d69c7;
   color: #fff;
-  &:hover {
-    background-color: #7a539b;
-  }
+}
+.submit_btn:hover {
+  background-color: #7a539b;
 }
 
 .hidden {
@@ -124,4 +133,4 @@ input {
   border: none;
   border-radius: 5px;
   visibility: hidden;
-}
+}/*# sourceMappingURL=style.css.map */
