@@ -3,13 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>3D Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <div class="container">
-      <div class="overlay"></div>
-      <div class="card"></div>
+    <div class="wrapper">
+      <h1>3D CARD</h1>
+      <div class="container">
+        <div class="overlay"></div>
+        <div class="card"></div>
+      </div>
     </div>
     <script>
       var container = document.querySelector('.container');
@@ -31,6 +40,23 @@
       });
     </script>
     <style>
+      body {
+        font-family: 'Noto Sans', sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
+      h1 {
+        margin-top: 0;
+        margin-bottom: 40px;
+      }
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        font-weight: 1000;
+      }
       .container {
         width: 220px;
         height: 310px;
@@ -52,7 +78,7 @@
         mix-blend-mode: color-dodge;
         background-size: 150% 150%;
         background-position: 100%;
-        transition: all 0.1s;
+        transition: all 0.3s;
       }
       .card {
         width: 220px;
