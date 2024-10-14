@@ -116,4 +116,11 @@ body {
 
 .history div {
   margin: 5px 0;
+}
+
+.copy {
+  color: #b3b3b3;
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: end;
 }/*# sourceMappingURL=calculator.css.map */
