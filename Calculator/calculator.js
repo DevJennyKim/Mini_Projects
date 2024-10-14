@@ -20,11 +20,7 @@ nums.forEach((num) => {
 operators.forEach((operator) => {
   operator.addEventListener('click', () => {
     if (!operatorCheck) {
-      if (operator.value === 'x') {
-        output.value += '*';
-      } else {
-        output.value += operator.value;
-      }
+      output.value += operator.value;
       operatorCheck = true;
       dotCheck = false;
     }
@@ -35,7 +31,13 @@ operators.forEach((operator) => {
 result.addEventListener('click', () => {
   try {
     const calculation = output.value;
-    output.value = eval(output.value);
+    let evaluatedValue = eval(output.value);
+
+    if (!Number.isInteger(evaluatedValue)) {
+      evaluatedValue = parseFloat(evaluatedValue.toFixed(2));
+    }
+
+    output.value = evaluatedValue;
 
     const historyItem = document.createElement('div');
     historyItem.textContent = `${calculation} = ${output.value}`;
