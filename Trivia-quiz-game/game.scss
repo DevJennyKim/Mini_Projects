@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 3rem;
+}
+.wrapper {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  height: 85vh;
+  background-color: #ffffff;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
+  &__title {
+    margin: 2rem 0;
+  }
+  &__quiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+    height: 10rem;
+    padding: 1rem 0;
+    text-align: center;
+    border: 3px solid gray;
+    font-size: 1.5rem;
+  }
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+//
+
+.player1,
+.player2 {
+  align-self: flex-end;
+  display: flex;
+
+  .text {
+    padding: 1rem;
+  }
+}
+
+.player1__title,
+.player2__title {
+  padding-bottom: 10px;
+}
+
+.player1__control--T,
+.player2__control--T {
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.player1__control--F,
+.player2__control--F {
+  background-color: #f44336;
+  color: #ffffff;
+  padding: 0.5rem 0.3rem;
+}
+
+.p1ScoreTracker li,
+.p2ScoreTracker li {
+  margin-bottom: 5px; /* Spacing between items */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 15px solid grey;
+  height: 50px;
+  width: 50px;
+}
+
+.scores {
+  position: fixed;
+  font-size: large;
+  font-weight: bold;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  div {
+    margin-bottom: 1rem;
+  }
+}
+
+.btn__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.btn {
+  position: relative;
+  width: 17vh;
+  height: 5vh;
+  background: linear-gradient(0deg, #f6a40e 0%, #ffbd41 100%);
+  line-height: 5vh;
+  padding: 0;
+  margin: 5vh 0;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  & span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 0;
+    background: #f6a40e;
+    transition: all 0.4s ease;
+  }
+  &:before {
+    height: 0%;
+    width: 2px;
+  }
+  &:after {
+    width: 0%;
+    height: 2px;
+  }
+  &:hover {
+    background: transparent;
+    box-shadow: none;
+  }
+  &:hover:before {
+    height: 100%;
+  }
+  &:hover:after {
+    width: 100%;
+  }
+  & span:hover {
+    font-weight: 500;
+    color: #6b6b6b;
+  }
+  & span:before,
+  & span:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    background: #f6a40e;
+    transition: all 0.7s ease;
+  }
+  & span:before {
+    width: 2px;
+    height: 0%;
+  }
+  & span:after {
+    width: 0%;
+    height: 2px;
+  }
+  & span:hover:before {
+    height: 100%;
+  }
+  & span:hover:after {
+    width: 100%;
+  }
+}

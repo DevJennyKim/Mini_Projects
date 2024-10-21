@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/scripts/game.js" defer></script>
+    <link rel="stylesheet" href="./game.css" />
+    <title>Game</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="player1">
+        <ul class="p1ScoreTracker"></ul>
+        <div class="text">
+          <p class="player1__title">Player 1</p>
+          <div class="controls">
+            <div class="player1__control--T">W<br />True</div>
+            <div class="player1__control--F">S<br />False</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="question"></div>
+        <div class="time"></div>
+      </div>
+
+      <div class="player2">
+        <div class="text">
+          <p class="player2__title">Player 2</p>
+          <div class="controls">
+            <div class="player2__control--T">↑<br />True</div>
+            <div class="player2__control--F">↓<br />False</div>
+          </div>
+        </div>
+
+        <ul class="p2ScoreTracker"></ul>
+      </div>
+
+      <div class="scores" style="display: none">
+        <div>Game over!</div>
+        <div class="player1__score">Player 1 Final Score: 0</div>
+        <div class="player2__score">Player 2 Final Score: 0</div>
+      </div>
+    </div>
+    <div class="btn__wrapper">
+      <button class="btn" onclick="location.href='./index.html'">
+        <span>Go To Main Menu</span>
+      </button>
+    </div>
+  </body>
+</html>
